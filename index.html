@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unity Force Company</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <style scoped>
+        .v-application ul {
+            padding-left: 0px !important;
+        }
+    </style>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then(reg => console.info('registered sw', reg))
+            .catch(err => console.error('error registering sw', err));
+    };
+</script>
+</head>
+<body>
+    <div id="app">
+        <v-app id="inspire">
+
+            <template>
+                <v-navigation-drawer v-model="drawer" style="position: fixed; background-color: rgb(22, 22, 22); z-index: 2;" 
+                    absolute temporary width="250px">
+                    
+                    <div class="containerDrawer">
+
+                        <ul class="scroll">
+                            <a href="#conceito"><li>Conceito</li></a>
+                            <a href="#horarios"><li>Horários</li></a>
+                            <a href="#onde"><li>Onde estamos</li></a>
+                           <a href="#"><li>Contato</li></a> 
+                        </ul>
+
+                        <ul class="iconesRedesDrawer">
+                            <a href="https://api.whatsapp.com/send?phone=5547997685297"><li><i class="fab fa-whatsapp"></i></li></a>
+                            <a href="https://www.instagram.com/unityforcecompany/?hl=pt-br"><li><i class="fab fa-instagram"></i></li></a>
+                        </ul>
+
+                    </div>
+
+                </v-navigation-drawer>
+            </template>
+                
+            <header>
+
+                <img src="images/logo.jpg" alt="Logo Unity">
+
+                <div @click='{drawer=!drawer}'>
+                    <i class="far fa-bars iconeMenuResp"></i>
+                </div>
+
+                <ul class="scroll">
+                    <a href="#conceito"><li>Conceito</li></a>
+                    <a href="#horarios"><li>Horários</li></a>
+                    <a href="#onde"><li>Onde estamos</li></a>
+                    <a href="#"><li>Contato</li></a> 
+                </ul>
+
+
+            </header>
+
+            <section>
+
+                <div class="containerSlide">
+                    <div></div>
+
+                    <p>
+                        <span class="frase1">
+                            <span class="backgroundCinza">
+                                Unidade
+                            </span> 
+                            é o estado de ser um ou único
+                            <br><br>
+                        </span>
+
+                        <span class="frase2">
+                            <span class="backgroundCinza">
+                                Força
+                            </span> 
+                            é algo que ocasiona movimento
+                            <br><br>
+                        </span>
+
+                        <span class="frase3">
+                            <span class="ufc"></span>
+                        </span>
+                    
+                    </p>
+                    
+                </div>
+
+            </section>
+
+            <div id="conceito" class="separa">
+                Conceito
+            </div>
+
+            <section>
+
+                <div class="containerConceito">
+                    <div></div>
+
+                    <p>
+                        Lorem Ipsum é simplesmente um texto fictício da indústria de impressão e composição. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma galé do tipo e embaralhou para fazer um livro de amostra de tipos. Ele sobreviveu não apenas cinco séculos, mas também ao salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker incluindo versões de Lorem Ipsum.
+                    </p>
+                    
+                </div>
+
+            </section>
+
+            <div id="horarios" class="separa">
+                Horários 
+            </div>
+
+            <section>
+
+                <div class="containerhorarios">
+                    <div class="imgHorarios"></div>
+
+                    <div class="horarios">
+
+                        <div v-for="h in horarios" class="horario">
+                            <span style="padding: 5px 20px;
+                                margin: 5px;
+                                color: #fff;
+                                font-size: 20px;
+                                border-radius:10px;">{{h.nivel}}</span>
+                            <span v-for="d in h.dia" class="titulo">{{d}}</span>
+                        </div>
+
+
+
+                    </div>
+                    
+                </div>
+
+            </section>
+
+            <div id="onde" class="separa">
+                Onde estamos
+            </div>
+
+            <section>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3576.408327380341!2d-48.84746068531059!3d-26.313274374806255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deb128019cac79%3A0x21dee1e760ffca19!2sAlisson%20Pereira%20Studio%20de%20Dan%C3%A7a!5e0!3m2!1spt-BR!2sbr!4v1640263542728!5m2!1spt-BR!2sbr" 
+                width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            </section>
+
+        </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
